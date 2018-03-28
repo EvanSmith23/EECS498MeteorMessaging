@@ -1,0 +1,33 @@
+<body>
+  <div id="container">
+
+    {{#if login }}
+      <header>
+        <h1>Conversation</h1>
+      </header>
+      <form class="new-message">
+        <input type="text" name="text" placeholder="new message">
+        <input type="submit" name="submit" value="Send">
+      </form>
+
+      <br/><br/>
+
+      <ul>
+        {{#each messages}}
+          {{> message }}
+        {{/each}}
+      </ul>
+    {{else}}
+      <header>
+        <h1>Login</h1>
+      </header>
+      <form>
+        <input type="text" id="username" name="username" placeholder="username"><br/>
+        <button type="submit" class="login">Login</button><br/>
+        <button type="submit" class="create-account">Create Account</button>
+      </form>
+      <div id="errorMessage"></div>
+    {{/if}}
+
+  </div>
+</body>
