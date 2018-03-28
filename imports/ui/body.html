@@ -5,18 +5,30 @@
       <header>
         <h1>Conversation</h1>
       </header>
+      <div id="username">Logged In User: {{ loggedInUser }}</div>
+      <button class="logout">Logout</button>
       <form class="new-message">
         <input type="text" name="text" placeholder="new message">
         <input type="submit" name="submit" value="Send">
       </form>
 
+      <div id="receiver">Receiver: {{ receiver }}</div>
+
       <br/><br/>
 
-      <ul>
+      <ul class="users">
+        {{#each users }}
+          {{> user }}
+        {{/each }}
+      </ul>
+
+      <ul >
         {{#each messages}}
           {{> message }}
         {{/each}}
       </ul>
+
+      
     {{else}}
       <header>
         <h1>Login</h1>

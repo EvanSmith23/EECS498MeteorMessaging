@@ -1,5 +1,10 @@
 ul {
   list-style : none;
+  display : inline;
+}
+
+ul.users li {
+  display : inline;
 }
 
 li {
@@ -10,10 +15,17 @@ li {
   border-radius : 7px;
 }
 
+button #user {
+  width : 100%;
+}
+
 #container {
   padding-left : 10%;
 }
 
+.logout {
+  float : right;
+}
 .delete {
   float : right;
 }
